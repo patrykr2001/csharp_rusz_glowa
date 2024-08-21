@@ -19,6 +19,15 @@ namespace MatchGame
         public MainWindow()
         {
             InitializeComponent();
+            SetUpGame();
+        }
+
+        private void SetUpGame()
+        {
+            List<string> animalEmoji = new List<string>()
+            {
+                
+            };
         }
     }
 }
