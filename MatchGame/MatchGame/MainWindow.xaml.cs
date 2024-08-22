@@ -26,8 +26,25 @@ namespace MatchGame
         {
             List<string> animalEmoji = new List<string>()
             {
-                
+                "🐙","🐙",
+                "🐡","🐡",
+                "🐘","🐘",
+                "🐳","🐳",
+                "🐪","🐪",
+                "🦕","🦕",
+                "🦘","🦘",
+                "🦔","🦔",
             };
+
+            Random random  = new Random();
+
+            foreach (var textBlock in mainGrid.Children.OfType<TextBlock>())
+            {
+                var index = random.Next(animalEmoji.Count);
+                var nextEmoji = animalEmoji[index];
+                textBlock.Text = nextEmoji;
+                animalEmoji.RemoveAt(index);
+            }
         }
     }
 }
