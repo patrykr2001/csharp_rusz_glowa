@@ -33,6 +33,9 @@ class Program
                     Console.WriteLine("Referencje zostały przestawione.");
                     (laura, lucek) = (lucek, laura);
                     break;
+                case 4:
+                    laura.SpeakTo(lucek, "Cześć, Lucku!");
+                    break;
             }
         }
     }
