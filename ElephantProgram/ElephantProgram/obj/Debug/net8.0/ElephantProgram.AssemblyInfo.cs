@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Rzutowanie")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("ElephantProgram")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5db681a35af330fa96a7155d25ace4f4b174a90d")]
-[assembly: System.Reflection.AssemblyProductAttribute("Rzutowanie")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Rzutowanie")]
+[assembly: System.Reflection.AssemblyProductAttribute("ElephantProgram")]
+[assembly: System.Reflection.AssemblyTitleAttribute("ElephantProgram")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Wygenerowane przez klasę WriteCodeFragment programu MSBuild.
