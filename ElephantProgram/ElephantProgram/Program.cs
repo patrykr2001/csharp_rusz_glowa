@@ -41,7 +41,7 @@ class Program
     /// Wyświetla informację i wczytuje wartość typu int z konsoli.
     /// </summary>
     /// <param name="prompt">Informacja wyświetlana w konsoli.</param>
-    /// <returns>Wczytana wartość int lub wartość domyślna
+    /// <returns>Wczytana wartość int lub -1
     /// (jeśli nie można przetworzyć wczytanej wartości)</returns>
     private static int ReadInt(string prompt)
     {
