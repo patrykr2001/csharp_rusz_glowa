@@ -1,11 +1,4 @@
-bin
-/MatchGame/MatchGame/obj
-/MatchGame/.vs/MatchGame
-/ExperimentWithControls/ExperimentWithControls/obj
-/ExperimentWithControls/.vs/ExperimentWithControls
-/ExperimentWithControls/.vs/ProjectEvaluation
-/PickACardUI/.vs/PickACardUI
-/PickACardUI/PickACardUI/obj
-/Kanapki/.vs/Kanapki
-/Kanapki/Kanapki/obj
-/PickACardUI/.vs/ProjectEvaluation
+**/bin/
+**/obj/
+**/.vs/
+**/.idea/
