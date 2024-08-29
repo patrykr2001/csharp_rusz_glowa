@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35219.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KalkulatorObrazen", "KalkulatorObrazen\KalkulatorObrazen.csproj", "{0017CA99-B023-4CDE-A1EC-B665054F8085}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0017CA99-B023-4CDE-A1EC-B665054F8085}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0017CA99-B023-4CDE-A1EC-B665054F8085}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0017CA99-B023-4CDE-A1EC-B665054F8085}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0017CA99-B023-4CDE-A1EC-B665054F8085}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {75F1A487-CE29-495B-9A3F-8CB80D44231C}
+	EndGlobalSection
+EndGlobal
