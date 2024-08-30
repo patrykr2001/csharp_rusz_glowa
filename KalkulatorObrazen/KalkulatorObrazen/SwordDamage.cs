@@ -11,36 +11,48 @@ namespace KalkulatorObrazen
         public const int BASE_DAMAGE = 3;
         public const int FLAME_DAMAGE = 2;
 
-        public int Roll;
-        private decimal MagicMultiplier = 1M;
-        private int FlamingDamage = 0;
-        public int Damage;
+        private int roll;
+        private bool flaming;
+        private bool magic;
+        
+        public int Damage {  get; private set; }
 
-        public void CalculateDamage()
+        public int Roll
         {
-            Damage = (int)(Roll * MagicMultiplier) + BASE_DAMAGE + FLAME_DAMAGE;
+            get { return roll; } 
+            set { 
+                roll = value;
+                CalculateDamage();
+            }
         }
 
-        public void SetMagic(bool isMagic)
+        public bool Flaming {  
+            get { return flaming; } 
+            set { 
+                flaming = value; 
+                CalculateDamage();
+            } 
+        }
+        
+        public bool Magic {  
+            get { return magic; } 
+            set { 
+                magic = value; 
+                CalculateDamage();
+            } 
+        }
+
+        public SwordDamage(int roll)
         {
-            if (isMagic)
-            {
-                MagicMultiplier = 1.75M;
-            }
-            else
-            {
-                MagicMultiplier = 1M;
-            }
+            this.roll = roll;
             CalculateDamage();
         }
 
-        public void SetFlaming(bool isFlaming)
+        private void CalculateDamage()
         {
-            CalculateDamage();
-            if(isFlaming)
-            {
-                Damage += FLAME_DAMAGE;
-            }
+            Damage = (int)(Roll * (Magic ? 1.75m : 1m)) + BASE_DAMAGE + (Flaming ? FLAME_DAMAGE : 0);
         }
+
+        
     }
 }
