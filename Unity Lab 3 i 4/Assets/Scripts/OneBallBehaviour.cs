@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OneBallBehaviour : MonoBehaviour
 {
-    public static int NextBallNumber = 1;
+    static int _nextBallNumber = 1;
     
     public float XRotation = 0f;
     public float YRotation = 1f;
@@ -16,7 +16,7 @@ public class OneBallBehaviour : MonoBehaviour
     void Start()
     {
         transform.position = new Vector3(3 - Random.value * 6, 3 - Random.value * 6, 3 - Random.value * 6);
-        BallNumber = NextBallNumber++;
+        BallNumber = _nextBallNumber++;
     }
 
     // Update is called once per frame
