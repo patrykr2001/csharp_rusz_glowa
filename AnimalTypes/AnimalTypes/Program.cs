@@ -23,8 +23,7 @@ class Program
 
             if (animal is IPackHunter packHunter)
             {
-                packHunter.HuntInPack();
-            }
+                packHunter.HuntInPack(); }
             
             Console.WriteLine();
         }
