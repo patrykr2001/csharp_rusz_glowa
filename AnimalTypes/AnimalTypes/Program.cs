@@ -16,14 +16,14 @@ class Program
         foreach (var animal in animals)
         {
             animal.MakeNoise();
-            if (animal is Hippo hippo)
+            if (animal is ISwimmer swimmer)
             {
-                hippo.Swim();
+                swimmer.Swim();
             }
 
-            if (animal is Wolf wolf)
+            if (animal is IPackHunter packHunter)
             {
-                wolf.HuntInPack();
+                packHunter.HuntInPack();
             }
             
             Console.WriteLine();

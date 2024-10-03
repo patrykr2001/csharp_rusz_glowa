@@ -5,7 +5,7 @@ abstract class Animal
     public abstract void MakeNoise();
 }
 
-class Hippo : Animal
+class Hippo : Animal, ISwimmer
 {
     public override void MakeNoise()
     {
@@ -23,7 +23,7 @@ abstract class Canine : Animal
     public bool BelongsToPack { get; protected set; } = false;
 }
 
-class Wolf : Canine
+class Wolf : Canine, IPackHunter
 {
     public Wolf(bool belongsToPack)
     {
