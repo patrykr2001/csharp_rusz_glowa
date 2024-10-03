@@ -4,10 +4,12 @@ class Program
 {
     static void Main(string[] args)
     {
-        Random random = new();
+        /*Random random = new();
         var suitNumber = random.Next(0, 4);
         var valueNumber = random.Next(1, 14);
         Card myCard = new Card((CardSuit)suitNumber, (CardValue)valueNumber);
-        Console.WriteLine(myCard.Name);
+        Console.WriteLine(myCard.Name);*/
+        Deck deck = new Deck();
+        deck.PrintCards();
     }
 }
