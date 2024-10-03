@@ -1,20 +1,11 @@
 namespace InterfaceExample1;
 
-public class ScaryScary : FunnyFunny, IScaryClown
+public class ScaryScary(string funnyThinkIHave, int scaryThingCount) : FunnyFunny(funnyThinkIHave), IScaryClown
 {
-    private int scaryThingCount;
-
-    public ScaryScary(string funnyThinkIHave, int scaryThingCount) : base(funnyThinkIHave)
-    {
-        this.scaryThingCount = scaryThingCount;
-    }
-
-    public string FunnyThingIHave => $"pająki -- {scaryThingCount}";
-
-    public string ScaryThingIHave { get; }
+    public string ScaryThingIHave => $"pająki -- {scaryThingCount}";
     
     public void ScaryLittleChildren()
     {
-        Console.WriteLine($"Ha! Mam was! Zobaczcie moje {scaryThingCount}!");
+        Console.WriteLine($"Ha! Mam was! Zobaczcie moje {ScaryThingIHave}!");
     }
 }

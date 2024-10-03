@@ -2,16 +2,15 @@ namespace InterfaceExample1;
 
 public class FunnyFunny : IClown
 {
-    private string funnyThinkIHave;
-    public string FunnyThingIHave => funnyThinkIHave;
+    public string FunnyThingIHave { get; }
 
-    public FunnyFunny(string funnyThinkIHave)
+    protected FunnyFunny(string funnyThinkIHave)
     {
-        this.funnyThinkIHave = funnyThinkIHave;
+        this.FunnyThingIHave = funnyThinkIHave;
     }
 
     public void Honk()
     {
-        Console.WriteLine($"Cześć dzieciaki! Mam {funnyThinkIHave}.");
+        Console.WriteLine($"Cześć dzieciaki! Mam {FunnyThingIHave}.");
     }
 }
