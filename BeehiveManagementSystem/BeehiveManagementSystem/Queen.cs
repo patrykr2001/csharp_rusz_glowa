@@ -104,19 +104,14 @@ namespace BeehiveManagementSystem
             foreach (IWorker worker in _workers)
             {
                 //if(EnemyHive.AttackingBees > 0)
-                if(true)
+                if (true)
                 {
-                    if (worker.Job == "Obrońca roju")
+                    if (worker is IDefender workerDefender)
                     {
-                        HiveDefender defender = (HiveDefender)worker;
-                        defender.DefendHive();
-                    }
-                    else if(worker.Job == "Obrońca nektaru")
-                    {
-                        NectarDefender defender = (NectarDefender)worker;
-                        defender.DefendHive();
+                        workerDefender.DefendHive();
                     }
                 }
             }
+        }
     }
 }
