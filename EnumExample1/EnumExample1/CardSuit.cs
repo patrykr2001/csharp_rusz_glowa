@@ -1,9 +1,9 @@
 namespace EnumExample1;
 
-public enum CardSuit
+public enum CardSuit : int
 {
-    Pik,
-    Trefl,
-    Karo,
-    Kier
+    Pik = 0,
+    Trefl = 1,
+    Karo = 2,
+    Kier = 3
 }
