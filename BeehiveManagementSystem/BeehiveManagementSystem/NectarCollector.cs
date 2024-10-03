@@ -13,6 +13,7 @@ namespace BeehiveManagementSystem
         public override float CostPerShift { get { return 1.95f;  } }
 
         public NectarCollector() : base("Zbieraczka nektaru") { }
+        public NectarCollector(string job) : base(job) { }
 
         protected override void DoJob()
         {

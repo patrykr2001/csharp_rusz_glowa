@@ -11,7 +11,7 @@ namespace BeehiveManagementSystem
         private readonly static float EGGS_PER_SHIFT = 0.45f;
         private readonly static float HONEY_PER_UNASSIGNED_WORKER = 0.5f;
 
-        private Bee[] _workers = new Bee[] { };
+        private IWorker[] _workers = new IWorker[] { };
         private float _unassignedWorkers = 0f;
         private float _eggs = 0f;
         public override float CostPerShift { get { return 2.15f; } }
@@ -26,7 +26,7 @@ namespace BeehiveManagementSystem
             AddWorker(new Eggcare(this));
         }
 
-        private void AddWorker(Bee worker)
+        private void AddWorker(IWorker worker)
         {
             if (_unassignedWorkers >= 1)
             {
@@ -48,7 +48,7 @@ namespace BeehiveManagementSystem
         private string WorkerStatus(string job)
         {
             int count = 0;
-            foreach (Bee worker in _workers)
+            foreach (IWorker worker in _workers)
             {
                 if (worker.Job == job) count++;
             }
@@ -59,7 +59,7 @@ namespace BeehiveManagementSystem
         {
             _eggs += EGGS_PER_SHIFT;
 
-            foreach (Bee worker in _workers)
+            foreach (IWorker worker in _workers)
             {
                 worker.WorkNextShift();
             }
@@ -81,6 +81,9 @@ namespace BeehiveManagementSystem
                 case "Opiekunka jaj":
                     AddWorker(new Eggcare(this));
                     break;
+                case "Obrońca roju":
+                    AddWorker(new HiveDefender());
+                    break;
                 default:
                     break;
             }
@@ -95,5 +98,25 @@ namespace BeehiveManagementSystem
                 _unassignedWorkers += eggsToConvert;
             }
         }
+
+        public void HiveUnderAttack()
+        {
+            foreach (IWorker worker in _workers)
+            {
+                //if(EnemyHive.AttackingBees > 0)
+                if(true)
+                {
+                    if (worker.Job == "Obrońca roju")
+                    {
+                        HiveDefender defender = (HiveDefender)worker;
+                        defender.DefendHive();
+                    }
+                    else if(worker.Job == "Obrońca nektaru")
+                    {
+                        NectarDefender defender = (NectarDefender)worker;
+                        defender.DefendHive();
+                    }
+                }
+            }
     }
 }
