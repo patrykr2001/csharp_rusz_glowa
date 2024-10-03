@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BeehiveManagementSystem
 {
-    internal class Queen : Bee
+    internal class Queen : Bee, INotifyPropertyChanged
     {
         private readonly static float EGGS_PER_SHIFT = 0.45f;
         private readonly static float HONEY_PER_UNASSIGNED_WORKER = 0.5f;
@@ -14,6 +15,14 @@ namespace BeehiveManagementSystem
         private IWorker[] _workers = new IWorker[] { };
         private float _unassignedWorkers = 0f;
         private float _eggs = 0f;
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
         public override float CostPerShift { get { return 2.15f; } }
 
         public string StatusReport { get; private set; }
@@ -40,9 +49,10 @@ namespace BeehiveManagementSystem
         {
             StatusReport = $"Raport o stanie skarbca:\n{HoneyVault.StatusReport}\n" +
                 $"Liczba jaj: {_eggs:0.0}\n" +
-                $"Nieprzydzielone robbotnice: {_unassignedWorkers:0.0}\n" +
+                $"Nieprzydzielone robotnice: {_unassignedWorkers:0.0}\n" +
                 $"{WorkerStatus("Zbieraczka nektaru")}\n{WorkerStatus("Producentka miodu")}\n{WorkerStatus("Opiekunka jaj")}\n" +
                 $"ROBOTNICE W SUMIE: {_workers.Length}";
+            OnPropertyChanged("StatusReport");
         }
 
         private string WorkerStatus(string job)
