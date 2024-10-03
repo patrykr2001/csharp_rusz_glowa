@@ -8,15 +8,15 @@ class Program
         tallGuy.TalkAboutYourself();
         Console.WriteLine($"Ten wysoki gość ma {tallGuy.FunnyThingIHave}.");
         tallGuy.Honk();*/
+        
+        IClown.CarCapacity = 18;
+        Console.WriteLine(IClown.ClownCarDescription());
 
-        /*IClown fingersTheClown = new ScaryScary("wielkie czerwone nosy", 14);
+        IClown fingersTheClown = new ScaryScary("wielkie czerwone nosy", 14);
         fingersTheClown.Honk();
         if (fingersTheClown is IScaryClown scaryClown)
         {
-            scaryClown.ScaryLittleChildren();
-        }*/
-
-        IClown.CarCapacity = 18;
-        Console.WriteLine(IClown.ClownCarDescription());
+            scaryClown.ScareAdults();
+        }
     }
 }

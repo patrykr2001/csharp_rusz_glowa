@@ -29,4 +29,12 @@ interface IScaryClown : IClown
 {
     string ScaryThingIHave { get; }
     void ScaryLittleChildren();
+
+    void ScareAdults()
+    {
+        Console.WriteLine($@"Jestem pradawny złem prześladującym Cię w snach.
+Spójrz na mój przerażający naszyjnik z {random.Next(4, 10)} palcami moich ofiar.
+A, byłbym zapomniał...");
+        ScaryLittleChildren();
+    }
 }
