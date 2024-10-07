@@ -15,7 +15,7 @@ class Program
             {23, new RetiredPlayer("Don Mattingly", 1997)},
             {42, new RetiredPlayer("Jacke Robinson", 1993)},
             {44, new RetiredPlayer("Reggie Jackson", 1993)},
-        };
+        }; 
         foreach (int jerseyNumber in retiredYankees.Keys)
         {
             var player = retiredYankees[jerseyNumber];
