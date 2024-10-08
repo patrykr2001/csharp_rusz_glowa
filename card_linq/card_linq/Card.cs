@@ -6,6 +6,8 @@ public class Card : IComparable<Card>
     public CardValue Value { get; set; }
     
     public string Name => $"{Value} {Suit}";
+    
+    public override string ToString() => Name;
 
     public Card(CardSuit suit, CardValue value)
     {
