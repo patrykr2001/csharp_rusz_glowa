@@ -1,4 +1,4 @@
-namespace EnumExample1;
+namespace card_linq;
 
 public class Deck
 {
