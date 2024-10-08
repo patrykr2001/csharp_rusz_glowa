@@ -1,6 +1,8 @@
+using System.Collections;
+
 namespace card_linq;
 
-public class Deck
+public class Deck : IEnumerable<Card>
 {
     private static readonly Random Random = new Random();
     private readonly Card[] _cards = new Card[52];
@@ -34,5 +36,18 @@ public class Deck
             (_cards[i], _cards[j]) = (_cards[j], _cards[i]);
         }
         return this;
+    }
+
+    public IEnumerator<Card> GetEnumerator()
+    {
+        foreach (Card card in _cards)
+        {
+            yield return card;
+        }
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
     }
 }
