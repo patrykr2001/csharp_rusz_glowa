@@ -1,6 +1,6 @@
 namespace JimmyLinq;
 
-static class ComicAnalyzer
+public static class ComicAnalyzer
 {
     private static PriceRange CalculatePriceRange(Comic comic)
     {
