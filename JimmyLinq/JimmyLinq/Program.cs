@@ -20,7 +20,7 @@ class Program
                     break;
                 default:
                     done = true;
-                    break;
+                    break; 
             }
         }
     }
