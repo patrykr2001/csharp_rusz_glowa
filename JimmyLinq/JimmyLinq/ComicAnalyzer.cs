@@ -2,9 +2,9 @@ namespace JimmyLinq;
 
 public static class ComicAnalyzer
 {
-    private static PriceRange CalculatePriceRange(Comic comic)
+    private static PriceRange CalculatePriceRange(Comic comic, IReadOnlyDictionary<int, decimal> prices)
     {
-        return Comic.Prices[comic.Issue] >= 100 ? PriceRange.Drogie : PriceRange.Tanie;
+        return prices[comic.Issue] >= 100 ? PriceRange.Drogie : PriceRange.Tanie;
     }
 
     public static IEnumerable<IGrouping<PriceRange, Comic>> GroupComicsByPrice(IEnumerable<Comic> comics, Dictionary<int, decimal> prices)
@@ -12,7 +12,7 @@ public static class ComicAnalyzer
         return
             from comic in comics
             orderby prices[comic.Issue]
-            group comic by CalculatePriceRange(comic) into priceGroup
+            group comic by CalculatePriceRange(comic, prices) into priceGroup
             select priceGroup;
     }
 
